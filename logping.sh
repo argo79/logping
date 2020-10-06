@@ -20,3 +20,5 @@ echo "STOP" >> $dir/ping.txt
 cat $dir/ping.txt | grep -E 'CEST|rtt|transmitted|Error' > $dir/logping.txt
 echo "Tentativi (CEST): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c CEST >> $dir/logping.txt
 echo "Riusciti (rtt): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c rtt >> $dir/logping.txt
+cat ping.txt |grep -zPo '.*CEST\nSTOP\n' > logping.log
+cat logping.txt |grep -A 1 : |grep -v : >> logping.log

@@ -1,5 +1,17 @@
-#!/bin/bash
-date >> /var/log/ping.txt ; ping -c 3 www.google.it >> /var/log/ping.txt
-cat /var/log/ping.txt | grep -E 'CEST|rtt|transmitted|Error' > /var/log/logping.txt
-echo "Tentativi (CEST): " >> /var/log/logping.txt ; cat /var/log/logping.txt | grep -c CEST >> /var/log/logping.txt
-echo "Riusciti (rtt): " >> /var/log/logping.txt ; cat /var/log/logping.txt | grep -c rtt >> /var/log/logping.txt
+
+dir="$HOME/log/"
+
+if [ ! -d $dir ] 	
+then
+    echo "Directory " $dir " DOES NOT exists." 
+    echo "Quindi la creo..."
+    echo $dir
+    mkdir $dir
+    exit 9999 # die with error code 9999
+else 
+	echo "Directory " $dir " EXISTS." 
+fi
+date >> $dir/ping.txt ; ping -c 3 www.google.it >> $dir/ping.txt
+cat $dir/ping.txt | grep -E 'CEST|rtt|transmitted|Error' > $dir/logping.txt
+echo "Tentativi (CEST): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c CEST >> $dir/logping.txt
+echo "Riusciti (rtt): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c rtt >> $dir/logping.txt

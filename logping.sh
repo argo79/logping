@@ -1,5 +1,7 @@
+# Visualizza i numeri di CEST e di rtt
 # cat logping.txt |grep -A 1 : |grep -v :
-
+# Visualizza SOLO i ping persi
+# cat ping.txt |grep -zPo '.*CEST\nSTOP\n'
 
 dir="$HOME/log/"
 

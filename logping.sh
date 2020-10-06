@@ -1,3 +1,5 @@
+# cat logping.txt |grep -A 1 : |grep -v :
+
 
 dir="$HOME/log/"
 
@@ -12,6 +14,7 @@ else
 	echo "Directory " $dir " EXISTS." 
 fi
 date >> $dir/ping.txt ; ping -c 3 www.google.it >> $dir/ping.txt
+echo "STOP" >> $dir/ping.txt
 cat $dir/ping.txt | grep -E 'CEST|rtt|transmitted|Error' > $dir/logping.txt
 echo "Tentativi (CEST): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c CEST >> $dir/logping.txt
 echo "Riusciti (rtt): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c rtt >> $dir/logping.txt

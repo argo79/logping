@@ -1,7 +1,13 @@
 # logping.sh
+Per connessioni instabili, con perdita di segnale, si può scedulare con crontab questo script.
+Si otterrà un log con le date orarie delle interruzioni.
+
 Crea un log (logping.txt totale e logping.log sintesi) con i risultati di tre ping a google.
+
 logfile.txt => data e risultati 3 ping
+
 logfile.log => data interruzioni e numero tentativi/riusciti/differenza
+
 
 esempio: 
 $ cat $HOME/log/logping.log

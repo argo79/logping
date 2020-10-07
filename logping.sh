@@ -26,7 +26,6 @@ NumCEST=$(<numeroCEST)
 NumRtt=$(<numeroRtt)
 Diff=$(($NumCEST-$NumRtt))
 
-
 echo "Tentativi (CEST): " >> $dir/logping.txt ; echo $NumCEST >> $dir/logping.txt
 echo "Riusciti (rtt): " >> $dir/logping.txt ; echo $NumRtt >> $dir/logping.txt
 echo "Differenza: " >> $dir/logping.txt ; echo $Diff >> $dir/logping.txt

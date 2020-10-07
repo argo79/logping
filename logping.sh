@@ -24,7 +24,7 @@ cat $dir/logping.txt | grep -c rtt > numeroRtt
 
 NumCEST=$(<numeroCEST)
 NumRtt=$(<numeroRtt)
-Diff=$($NumCEST-$NumRtt)
+Diff=$(($NumCEST-$NumRtt))
 
 
 echo "Tentativi (CEST): " >> $dir/logping.txt ; echo $NumCEST >> $dir/logping.txt

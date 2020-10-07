@@ -28,24 +28,24 @@ NumCEST=$(<numeroCEST)
 NumRtt=$(<numeroRtt)
 Diff=$(($NumCEST-$NumRtt))
 
-echo "Tentativi (CEST): " >> $dir/logping.txt ; echo $NumCEST >> $dir/logping.txt
-echo "Riusciti (rtt): " >> $dir/logping.txt ; echo $NumRtt >> $dir/logping.txt
-echo "Interruzioni: " >> $dir/logping.txt ; echo $Diff >> $dir/logping.txt
+echo -e "\e[1m\e[93mTentativi (CEST): \e[0m" >> $dir/logping.txt ; echo -e "    "$NumCEST >> $dir/logping.txt
+echo -e "\e[1m\e[92mRiusciti (rtt)\e[0m: " >> $dir/logping.txt ; echo -e "    "$NumRtt >> $dir/logping.txt
+echo -e "\e[1m\e[31mInterruzioni: " >> $dir/logping.txt ; echo -e "     \e[5m"$Diff"\e[25m\e[0m" >> $dir/logping.txt
 # echo "Tentativi (CEST): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c CEST >> $dir/logping.txt
 # echo "Riusciti (rtt): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c rtt >> $dir/logping.txt
 
-echo "**************************" > $dir/logping.log
-echo "* File log di logping.sh *" >> $dir/logping.log
-echo "**************************" >> $dir/logping.log
-echo "- Interruzioni -" >> $dir/logping.log
+echo -e "**************************" > $dir/logping.log
+echo -e "* \e[1m\e[32mFile log di logping.sh\e[0m *" >> $dir/logping.log
+echo -e "**************************" >> $dir/logping.log
+echo -e "\e[1m\e[31m- Interruzioni \e[0m-" >> $dir/logping.log
 # echo "" >> $dir/logping.log
 cat $dir/ping.txt | grep -zPo '.*CEST\nSTOP\n' >> $dir/logping.log
 echo "" >> $dir/logping.log
-echo "- Ultimo tentativo -" >> $dir/logping.log
+echo -e "\e[1m\e[32m- Ultimo tentativo -\e[0m" >> $dir/logping.log
 cat $dir/logping.txt |grep  -zPo '.*CEST\n.*\nrtt.*\n' > $dir/lastping.log
 tail -n 4 $dir/lastping.log >> $dir/logping.log
 echo "" >> $dir/logping.log
-echo "- Totali -" >> $dir/logping.log
+echo -e "\e[1m\e[32m- Totali -\e[0m" >> $dir/logping.log
 cat $dir/logping.txt | grep -A1 -E 'Tentativi|Riusciti|Interruzioni' >> $dir/logping.log
-echo "***********************" >> $dir/logping.log
+echo -e "***********************" >> $dir/logping.log
 # cat $dir/logping.txt |grep -A 1 : |grep -v : >> $dir/logping.log

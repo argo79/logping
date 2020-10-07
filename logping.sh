@@ -55,5 +55,10 @@ echo -e "\e[0m" >> $dir/logping.log
 # echo "" >> $dir/logping.log
 echo -e "\e[1m\e[32m- Totali -\e[0m" >> $dir/logping.log
 cat $dir/logping.txt | grep -A1 -E 'Tentativi|Riusciti|Interruzioni' >> $dir/logping.log
+
+echo -e "" >> $dir/logping.log
+echo -e "\e[1m\e[95mUltimo speedtest: \e[0m" >> $dir/logping.log
+tail -n 3 $dir/logspeed.log >> $dir/logping.log
+
 echo -e "**************************" >> $dir/logping.log
 # cat $dir/logping.txt |grep -A 1 : |grep -v : >> $dir/logping.log

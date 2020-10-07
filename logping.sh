@@ -30,7 +30,7 @@ Diff=$(($NumCEST-$NumRtt))
 
 echo "Tentativi (CEST): " >> $dir/logping.txt ; echo $NumCEST >> $dir/logping.txt
 echo "Riusciti (rtt): " >> $dir/logping.txt ; echo $NumRtt >> $dir/logping.txt
-echo "Differenza: " >> $dir/logping.txt ; echo $Diff >> $dir/logping.txt
+echo "Interruzioni: " >> $dir/logping.txt ; echo $Diff >> $dir/logping.txt
 # echo "Tentativi (CEST): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c CEST >> $dir/logping.txt
 # echo "Riusciti (rtt): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c rtt >> $dir/logping.txt
 
@@ -46,6 +46,6 @@ cat $dir/logping.txt |grep  -zPo '.*CEST\n.*\n' > $dir/lastping.log
 tail -n 3 $dir/lastping.log >> $dir/logping.log
 echo "" >> $dir/logping.log
 echo "- Totali -" >> $dir/logping.log
-cat $dir/logping.txt | grep -A1 -E 'Tentativi|Riusciti|Differenza' >> $dir/logping.log
+cat $dir/logping.txt | grep -A1 -E 'Tentativi|Riusciti|Interruzioni' >> $dir/logping.log
 echo "***********************" >> $dir/logping.log
 # cat $dir/logping.txt |grep -A 1 : |grep -v : >> $dir/logping.log

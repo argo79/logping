@@ -29,5 +29,6 @@ echo "Riusciti (rtt): " >> $dir/logping.txt ; cat $dir/numeroRtt.txt >> $dir/log
 # echo "Riusciti (rtt): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c rtt >> $dir/logping.txt
 
 cat $dir/ping.txt |grep -zPo '.*CEST\nSTOP\n' > $dir/logping.log
+echo "- Totali -" >> $dir/logping.log
 cat $dir/logping.txt |grep -A 1 : >> $dir/logping.log
 # cat $dir/logping.txt |grep -A 1 : |grep -v : >> $dir/logping.log

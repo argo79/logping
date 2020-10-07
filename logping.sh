@@ -6,7 +6,6 @@
 # cat ping.txt |grep -zPo '.*CEST\nSTOP\n'
 
 dir="$HOME/log"
-
 if [ ! -d $dir ] 	
 then
     echo "Directory " $dir " DOES NOT exists." 

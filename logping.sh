@@ -41,10 +41,11 @@ echo -e "\e[1m\e[31m- Interruzioni \e[0m-" >> $dir/logping.log
 # echo "" >> $dir/logping.log
 cat $dir/ping.txt | grep -zPo '.*CEST\nSTOP\n' >> $dir/logping.log
 echo "" >> $dir/logping.log
-echo -e "\e[1m\e[95m- Ultimo tentativo -\e[0m" >> $dir/logping.log
+echo -e "\e[1m\e[95m- Ultimo tentativo -\e[0m\e[96m" >> $dir/logping.log
 cat $dir/logping.txt |grep  -zPo '.*CEST\n.*\nrtt.*\n' > $dir/lastping.log
 tail -n 4 $dir/lastping.log >> $dir/logping.log
-echo "" >> $dir/logping.log
+echo -e "\e[0m" >> $dir/logping.log
+# echo "" >> $dir/logping.log
 echo -e "\e[1m\e[32m- Totali -\e[0m" >> $dir/logping.log
 cat $dir/logping.txt | grep -A1 -E 'Tentativi|Riusciti|Interruzioni' >> $dir/logping.log
 echo -e "**************************" >> $dir/logping.log

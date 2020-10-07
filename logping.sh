@@ -30,7 +30,7 @@ Diff=$(($NumCEST-$NumRtt))
 
 echo -e "\e[1m\e[93mTentativi (CEST): \e[0m" >> $dir/logping.txt ; echo -e "    "$NumCEST >> $dir/logping.txt
 echo -e "\e[1m\e[92mRiusciti (rtt)\e[0m: " >> $dir/logping.txt ; echo -e "    "$NumRtt >> $dir/logping.txt
-echo -e "\e[1m\e[31mInterruzioni: " >> $dir/logping.txt ; echo -e "     \e[5m"$Diff"\e[25m\e[0m" >> $dir/logping.txt
+echo -e "\e[1m\e[31mInterruzioni: " >> $dir/logping.txt ; echo -e "    \e[5m"$Diff"\e[25m\e[0m" >> $dir/logping.txt
 # echo "Tentativi (CEST): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c CEST >> $dir/logping.txt
 # echo "Riusciti (rtt): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c rtt >> $dir/logping.txt
 

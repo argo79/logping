@@ -1,4 +1,5 @@
 Per connessioni instabili o con frequenti interruzioni è possibile schedulare questo script.
+
 Crea un log (logping.txt totale e logping.log sintesi) con i risultati di tre ping a google.
 
 logfile.txt => data e risultati 3 ping

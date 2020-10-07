@@ -20,11 +20,11 @@ date >> $dir/ping.txt ; ping -c 3 www.google.it >> $dir/ping.txt
 echo "STOP" >> $dir/ping.txt
 cat $dir/ping.txt | grep -E 'CEST|rtt|transmitted|Error' > $dir/logping.txt
 
-cat $dir/logping.txt | grep -c CEST > numeroCEST 
-cat $dir/logping.txt | grep -c rtt > numeroRtt
+cat $dir/logping.txt | grep -c CEST > $dir/numeroCEST 
+cat $dir/logping.txt | grep -c rtt > $dir/numeroRtt
 
-NumCEST=$(<numeroCEST)
-NumRtt=$(<numeroRtt)
+NumCEST=$(<$dir/numeroCEST)
+NumRtt=$(<$dir/numeroRtt)
 Diff=$(($NumCEST-$NumRtt))
 
 echo -e "\e[1m\e[93mTentativi (CEST): \e[0m" >> $dir/logping.txt ; echo -e "    "$NumCEST >> $dir/logping.txt
@@ -62,3 +62,4 @@ tail -n 3 $dir/logspeed.log >> $dir/logping.log
 
 echo -e "**************************" >> $dir/logping.log
 # cat $dir/logping.txt |grep -A 1 : |grep -v : >> $dir/logping.log
+

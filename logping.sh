@@ -34,8 +34,9 @@ echo "Differenza: " >> $dir/logping.txt ; echo $Diff >> $dir/logping.txt
 # echo "Tentativi (CEST): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c CEST >> $dir/logping.txt
 # echo "Riusciti (rtt): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c rtt >> $dir/logping.txt
 
-echo "File log di logping.sh" > $dir/logping.log
-echo "***********************" >> $dir/logping.log
+echo "**************************" > $dir/logping.log
+echo "* File log di logping.sh *" >> $dir/logping.log
+echo "**************************" >> $dir/logping.log
 echo "- Interruzioni -" >> $dir/logping.log
 echo "" >> $dir/logping.log
 cat $dir/ping.txt | grep -zPo '.*CEST\nSTOP\n' >> $dir/logping.log

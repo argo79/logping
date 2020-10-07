@@ -33,6 +33,7 @@ echo -e "\e[1m\e[92mRiusciti (rtt)\e[0m: " >> $dir/logping.txt ; echo -e "    "$
 
 if [ $Diff -gt 0 ]; then 
 	echo "È maggiore di 0"
+	echo "Ci sono state "$Diff" interruzioni..."
 	echo -e "\e[1m\e[31mInterruzioni: " >> $dir/logping.txt ; echo -e "    \e[5m"$Diff"\e[25m\e[0m" >> $dir/logping.txt
 else
 	echo "È uguale a 0"

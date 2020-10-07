@@ -1,9 +1,12 @@
 # logping.sh
 Crea un log (logping.txt totale e logping.log sintesi) con i risultati di tre ping a google.
+
 logfile.txt => data e risultati 3 ping
+
 logfile.log => data interruzioni e numero tentativi/riusciti/differenza
 
-esempio: 
+esempio:
+
 $ cat $HOME/log/logping.log
 **************************
 * File log di logping.sh *

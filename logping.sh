@@ -47,5 +47,5 @@ tail -n 4 $dir/lastping.log >> $dir/logping.log
 echo "" >> $dir/logping.log
 echo -e "\e[1m\e[32m- Totali -\e[0m" >> $dir/logping.log
 cat $dir/logping.txt | grep -A1 -E 'Tentativi|Riusciti|Interruzioni' >> $dir/logping.log
-echo -e "***********************" >> $dir/logping.log
+echo -e "**************************" >> $dir/logping.log
 # cat $dir/logping.txt |grep -A 1 : |grep -v : >> $dir/logping.log

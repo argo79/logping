@@ -35,7 +35,10 @@ echo "Differenza: " >> $dir/logping.txt ; echo $Diff >> $dir/logping.txt
 # echo "Riusciti (rtt): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c rtt >> $dir/logping.txt
 
 echo "- Interruzioni -" > $dir/logping.log
+echo "" >> $dir/logping.log
 cat $dir/ping.txt | grep -zPo '.*CEST\nSTOP\n' >> $dir/logping.log
+echo "" >> $dir/logping.log
 echo "- Totali -" >> $dir/logping.log
+echo "" >> $dir/logping.log
 cat $dir/logping.txt | grep -A1 -E 'Tentativi|Riusciti|Differenza' >> $dir/logping.log
 # cat $dir/logping.txt |grep -A 1 : |grep -v : >> $dir/logping.log

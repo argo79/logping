@@ -32,8 +32,10 @@ echo -e "\e[1m\e[93mTentativi (CEST): \e[0m" >> $dir/logping.txt ; echo -e "    
 echo -e "\e[1m\e[92mRiusciti (rtt)\e[0m: " >> $dir/logping.txt ; echo -e "    "$NumRtt >> $dir/logping.txt
 
 if [ $Diff>0 ]; then 
+	echo "È maggiore di 0"
 	echo -e "\e[1m\e[31mInterruzioni: " >> $dir/logping.txt ; echo -e "    \e[5m"$Diff"\e[25m\e[0m" >> $dir/logping.txt
 else
+	echo "È uguale a 0"
 	echo -e "\e[1m\e[31mInterruzioni: " >> $dir/logping.txt ; echo -e "    "$Diff"\e[0m" >> $dir/logping.txt
 fi
 # echo "Tentativi (CEST): " >> $dir/logping.txt ; cat $dir/logping.txt | grep -c CEST >> $dir/logping.txt

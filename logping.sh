@@ -38,8 +38,12 @@ echo "**************************" > $dir/logping.log
 echo "* File log di logping.sh *" >> $dir/logping.log
 echo "**************************" >> $dir/logping.log
 echo "- Interruzioni -" >> $dir/logping.log
-echo "" >> $dir/logping.log
+# echo "" >> $dir/logping.log
 cat $dir/ping.txt | grep -zPo '.*CEST\nSTOP\n' >> $dir/logping.log
+echo "" >> $dir/logping.log
+echo "- Ultimo tentativo -" >> $dir/logping.log
+cat $dir/logping.txt |grep  -zPo '.*CEST\n.*\n' > $dir/lastping.log
+tail -n 3 $dir/lastping.log >> $dir/logping.log
 echo "" >> $dir/logping.log
 echo "- Totali -" >> $dir/logping.log
 cat $dir/logping.txt | grep -A1 -E 'Tentativi|Riusciti|Differenza' >> $dir/logping.log

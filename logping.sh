@@ -61,5 +61,7 @@ echo -e "\e[1m\e[95m- Ultimo speedtest -\e[0m" >> $dir/logping.log
 tail -n 3 $dir/logspeed.log >> $dir/logping.log
 
 echo -e "**************************" >> $dir/logping.log
+
+/home/argo/logping/./logmosquitto.sh
 # cat $dir/logping.txt |grep -A 1 : |grep -v : >> $dir/logping.log
 
